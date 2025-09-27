@@ -1,0 +1,96 @@
+# ESP32 RC Car Complete Setup Guide
+
+## 🎮 **TRANSMITTER WIRING**
+
+### **NRF24L01 → ESP32 Transmitter**
+```
+NRF24L01        ESP32
+--------        -----
+VCC     →       3.3V
+GND     →       GND
+CE      →       GPIO 5
+CSN     →       GPIO 4
+SCK     →       GPIO 18
+MOSI    →       GPIO 23
+MISO    →       GPIO 19
+IRQ     →       (Not connected)
+```
+
+### **Joysticks → ESP32 Transmitter**
+```
+Component       ESP32 Pin
+---------       ---------
+Left X          GPIO 34
+Left Y          GPIO 35
+Left SW         GPIO 27
+Right X         GPIO 32
+Right Y         GPIO 33
+Right SW        GPIO 14
+```
+
+### **Buzzer → ESP32 Transmitter**
+```
+Buzzer          ESP32 Pin
+------          ---------
+Positive (+)    GPIO 26
+Negative (-)    GND
+```
+
+---
+
+## 🚗 **RECEIVER WIRING**
+
+### **NRF24L01 → ESP32 Receiver**
+```
+NRF24L01        ESP32
+--------        -----
+VCC     →       3.3V
+GND     →       GND
+CE      →       GPIO 5
+CSN     →       GPIO 4
+SCK     →       GPIO 18
+MOSI    →       GPIO 22  (Custom pin)
+MISO    →       GPIO 19
+IRQ     →       (Not connected)
+```
+
+### **SG90 Servo → ESP32 Receiver**
+```
+Servo           ESP32 Pin
+-----           ---------
+Signal (Orange) GPIO 13
+VCC (Red)       5V (or external 5V)
+GND (Brown)     GND
+```
+
+### **L298N Motor Driver → ESP32 Receiver**
+```
+L298N           ESP32 Pin
+-----           ---------
+IN3             GPIO 26
+IN4             GPIO 27
+ENB             GPIO 25
+12V+            Battery 12V+ (6-12V)
+GND             Common GND
+Motor B+        DC Motor +
+Motor B-        DC Motor -
+```
+
+---
+
+## ⚡ **POWER CONNECTIONS**
+- **ESP32 Transmitter**: USB or 7-12V to Vin
+- **ESP32 Receiver**: USB or 7-12V to Vin  
+- **L298N**: 6-12V battery for motor power
+- **Servo**: 5V from ESP32 or external supply
+- **Important**: All GND pins connected together
+
+---
+
+## 🎮 **CONTROL LAYOUT**
+- **RIGHT Joystick X** = Steering (Left/Right)
+- **LEFT Joystick Y** = Speed (Forward/Backward)
+- **LEFT Joystick UP** = Car Forward
+- **LEFT Joystick DOWN** = Car Reverse  
+- **LEFT Joystick CENTER** = Car Stop
+- **Right Button** = Emergency Stop Toggle
