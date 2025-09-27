@@ -155,10 +155,8 @@ if (radio.available()) {
 
 Here’s a demo of the RC car in action:
 
-<video controls width="600">
-  <source src="https://github.com/1-abesh-1/spike-the-dog-rc-car/blob/main/WhatsApp%20Video%202025-09-27%20at%206.53.03%20PM.mp4?raw=true" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Watch the video](https://img.shields.io/badge/Watch%20Video-Click%20Here-red?style=for-the-badge)](https://github.com/1-abesh-1/spike-the-dog-rc-car/blob/main/WhatsApp%20Video%202025-09-27%20at%206.53.03%20PM.mp4)
+
 
 ---
 
@@ -169,7 +167,7 @@ I burned some components during development:
 One ESP32 was damaged due to a short circuit caused by a coverless 18650 LiPo battery.
 The motor driver (L298N) requires a stable 12V supply to work reliably.
 Battery protection boards were added later for both the transmitter and receiver to avoid similar issues in the future.
-The other two components were burned in different projects. I wish to create a repo for shareing my burned components cause and cautions
+The other two components were burned in different projects. I plan to create a repository to share the causes of burned components and the precautions to avoid them.
 ![burned](https://github.com/1-abesh-1/spike-the-dog-rc-car/blob/main/WhatsApp%20Image%202025-09-27%20at%206.51.00%20PM.jpeg?raw=true)
 
 ---
